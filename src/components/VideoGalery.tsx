@@ -42,9 +42,9 @@ const VideoGallery = () => {
     };
 
     return (
-        <div className="flex w-full md:justify-center gap-6 items-end">
+        <div className="flex w-full xl:justify-center gap-6 items-end">
             {/* Primera columna */}
-            <div className="w-full md:w-1/4 flex flex-col gap-6">
+            <div className="w-full xl:w-1/4 flex flex-col gap-6">
                 {visibleVideos.slice(0, 2).map((v) => (
                     <motion.div
                         key={v.id}
@@ -52,7 +52,7 @@ const VideoGallery = () => {
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
                         transition={{ duration: 0.4 }}
-                        className="w-full bg-primary h-[220px] md:h-[380px] hover:scale-105 duration-150 cursor-pointer"
+                        className="w-full bg-primary h-[220px] xl:h-[380px] hover:scale-105 duration-150 cursor-pointer"
                         onClick={() => setSelectedVideo(v)}
                     >
                         <video autoPlay muted loop className="w-full h-full object-cover">
@@ -62,7 +62,7 @@ const VideoGallery = () => {
                 ))}
             </div>
             {/* Segunda columna */}
-            <div className="w-full md:w-1/4 flex flex-col gap-6">
+            <div className="w-full xl:w-1/4 flex flex-col gap-6">
                 {visibleVideos.slice(2, 4).map((v) => (
                     <motion.div
                         key={v.id}
@@ -70,7 +70,7 @@ const VideoGallery = () => {
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
                         transition={{ duration: 0.4 }}
-                        className="w-full bg-primary h-[220px] md:h-[380px] hover:scale-105 duration-150 cursor-pointer"
+                        className="w-full bg-primary h-[220px] xl:h-[380px] hover:scale-105 duration-150 cursor-pointer"
                         onClick={() => setSelectedVideo(v)}
                     >
                         <video autoPlay muted loop className="w-full h-full object-cover">
@@ -81,7 +81,7 @@ const VideoGallery = () => {
                 <div className="flex justify-center gap-2 z-10 relative">
                     <button aria-label="previous video" className="p-2" onClick={handlePrev}>
                         <svg
-                            className="h-8 w-8 md:h-12 md:w-12 text-white"
+                            className="h-8 w-8 md:h-10 md:w-10 xl:h-12 xl:w-12 text-white"
                             xmlns="http://www.w3.org/2000/svg"
                             width="32"
                             height="32"
@@ -95,7 +95,7 @@ const VideoGallery = () => {
                     </button>
                     <button aria-label="next video" onClick={handleNext}>
                         <svg
-                            className="h-8 w-8 md:h-12 md:w-12 text-white"
+                            className="h-8 w-8 md:h-10 md:w-10 xl:h-12 xl:w-12 text-white"
                             xmlns="http://www.w3.org/2000/svg"
                             width="32"
                             height="32"
@@ -110,7 +110,7 @@ const VideoGallery = () => {
                 </div>
             </div>
             {/* Tercera columna solo en md+ */}
-            <div className="w-full md:w-1/4 hidden md:flex flex-col gap-6">
+            <div className="w-full xl:w-1/4 hidden xl:flex flex-col gap-6">
                 {visibleVideos.slice(4, 6).map((v) => (
                     <motion.div
                         key={v.id}
@@ -118,7 +118,7 @@ const VideoGallery = () => {
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
                         transition={{ duration: 0.4 }}
-                        className="w-full bg-primary h-[220px] md:h-[380px] hover:scale-105 duration-150 cursor-pointer"
+                        className="w-full bg-primary h-[220px] xl:h-[380px] hover:scale-105 duration-150 cursor-pointer"
                         onClick={() => setSelectedVideo(v)}
                     >
                         <video autoPlay muted loop className="w-full h-full object-cover">
@@ -145,7 +145,7 @@ const VideoGallery = () => {
                             <video autoPlay controls className="w-full h-full object-contain bg-black">
                                 <source src={selectedVideo.videoSrc} />
                             </video>
-                            <button onClick={() => setSelectedVideo(null)} className="absolute top-0 md:top-2 md:right-0 sm:right-12 text-white text-4xl">×</button>
+                            <button onClick={() => setSelectedVideo(null)} className="absolute top-0 xl:top-2 xl:right-0 sm:right-12 text-white text-4xl">×</button>
                         </motion.div>
                     </motion.div>
                 )}

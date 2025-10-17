@@ -2,43 +2,42 @@
 import Layout from "../layouts/layout.astro";
 import ClaseContainer from "../components/index/ClaseContainer.astro";
 import NavBar from "../components/NavBar.astro";
-import { Icon } from "astro-icon/components";
 import TestimonyCarrousel from "../components/index/TestimonyCarrousel.tsx";
 import VideoGalery from "../components/VideoGalery";
 ---
 
 <Layout>
   <section
-    class="flex flex-col items-center px-42  relative bg-cover"
+    class="flex flex-col items-center px-6 md:px-16 xl:px-42  relative bg-cover"
     style="background-image: var(--gradient-bg-hero), url(/img/dance-studio-cover.png); background-repeat: no-repeat; background-position:center top;"
   >
     <NavBar />
-    <div class="flex flex-col gap-10 py-22 md:py-30 items-center">
+    <div class="flex flex-col gap-10 py-22 md:py-28 xl:py-30 items-center">
       <h1
-        class="text-white uppercase text-5xl md:text-6xl font-bold italic text-balance text-center"
+        class="text-white uppercase text-5xl xl:text-6xl font-bold italic text-balance text-center"
       >
         <span class="text-primary">Aprende</span> a bailar desde 0
       </h1>
-      <p class="text-white text-balance text-center md:text-xl max-w-[60ch]">
+      <p class="text-white text-balance text-center xl:text-xl max-w-[60ch]">
         No necesitas experiencia, aquí empezamos desde lo básico, <span
           class="text-primary font-bold">paso a paso</span
         >, hasta que disfrutes cada canción en la pista.
       </p>
       <button
-        class="text-primary border-primary border py-2 px-8 text-xl md:text-2xl font-semibold"
+        class="text-primary border-primary border py-2 px-8 text-xl xl:text-2xl font-semibold"
       >
         Empieza hoy
       </button>
     </div>
   </section>
 
-  <section class="flex flex-col px-6 md:px-42 gap-10">
+  <section class="flex flex-col px-6 md:px-16 xl:px-42 gap-10">
     <h2
-      class="text-white text-2xl md:text-4xl font-bold uppercase italic text-balance text-center"
+      class="text-white text-2xl md:text-3xl xl:text-4xl font-bold uppercase italic text-balance text-center"
     >
       <span class="text-primary"> Próximas </span> clases
     </h2>
-    <div class="flex flex-col md:flex-row md:justify-center gap-4">
+    <div class="flex flex-col md:flex-row xl:justify-center gap-4">
       <ClaseContainer
         titulo="Salsa para principiantes"
         enlace="/"
@@ -57,67 +56,67 @@ import VideoGalery from "../components/VideoGalery";
     </div>
   </section>
 
-  <section class="flex flex-col px-6 md:px-42 my-10 md:my-30 gap-15">
+  <section class="flex flex-col px-6 md:px-16 xl:px-42 my-10 md:my-20 xl:my-30 gap-15">
     <h2
-      class="text-white text-2xl md:text-4xl font-bold uppercase italic text-balance text-center"
+      class="text-white text-2xl md:text-3xl xl:text-4xl font-bold uppercase italic text-balance text-center"
     >
       Lo que nos hace <span class="text-primary">únicos</span>
     </h2>
 
     <div class="relative">
       <span
-        class="absolute bg-gradient-to-r from-primary to-[#bd5139] text-balance font-semibold px-3 py-1 md:px-5 md:py-2 z-0 text-sm md:text-lg max-w-[120px] md:max-w-[250px] text-center uppercase md:top-26 md:left-24"
+        class="absolute bg-gradient-to-r from-primary to-[#bd5139] text-balance font-semibold px-3 py-1 xl:px-5 xl:py-2 z-0 text-sm xl:text-lg max-w-[120px] xl:max-w-[250px] text-center uppercase sm:top-5 xl:top-26 sm:left-32 xl:left-24"
         >Aprende desde cero</span
       >
       <span
-        class="absolute bg-gradient-to-l from-primary to-[#bd5139] text-balance font-semibold px-3 py-1 md:px-5 md:py-2 z-0 text-sm md:text-lg max-w-[120px] md:max-w-[250px] text-center -right-0 top-20 md:top-60 md:right-20 uppercase"
+        class="absolute bg-gradient-to-l from-primary to-[#bd5139] text-balance font-semibold px-3 py-1 xl:px-5 xl:py-2 z-0 text-sm xl:text-lg max-w-[120px] xl:max-w-[250px] text-center -right-0 top-20 xl:top-60 sm:right-32 xl:right-20 uppercase"
         >Horarios flexibles</span
       >
       <span
-        class="absolute bg-gradient-to-r from-primary to-[#bd5139] text-balance font-semibold px-3 py-1 md:px-5 md:py-2 z-20 text-sm md:text-lg max-w-[120px] md:max-w-[250px] text-center top-40 md:top-90 uppercase"
+        class="absolute bg-gradient-to-r from-primary to-[#bd5139] text-balance font-semibold px-3 py-1 xl:px-5 xl:py-2 z-20 text-sm xl:text-lg max-w-[120px] xl:max-w-[250px] text-center top-40 xl:top-90 sm:left-24 uppercase"
         >Ambiente amigable</span
       >
       <span
-        class="absolute bg-gradient-to-l from-primary to-[#bd5139] text-balance font-semibold px-3 py-1 md:px-5 md:py-2 z-20 text-sm md:text-lg max-w-[120px] md:max-w-[250px] text-center top-60 md:top-120 right-0 md:right-16
+        class="absolute bg-gradient-to-l from-primary to-[#bd5139] text-balance font-semibold px-3 py-1 xl:px-5 xl:py-2 z-20 text-sm xl:text-lg max-w-[120px] xl:max-w-[250px] text-center top-60 xl:top-120 right-0 sm:right-28 xl:right-16
 	   uppercase"
         >Estilos Variados</span
       >
       <span
-        class="absolute bg-gradient-to-l from-primary to-[#bd5139] text-balance font-semibold px-3 py-1 md:px-5 md:py-2 z-20 text-sm md:text-lg text-center -bottom-2 md:bottom-40 left-1/2 md:left-44 -translate-x-1/2 uppercase"
+        class="absolute bg-gradient-to-l from-primary to-[#bd5139] text-balance font-semibold px-3 py-1 xl:px-5 xl:py-2 z-20 text-sm xl:text-lg text-center -bottom-2 xl:bottom-40 left-1/2 xl:left-44 -translate-x-1/2 uppercase"
         >Ritmo Garantizado</span
       >
       <img
         src="/img/dance-studio-pareja.png"
         alt="Pareja Bailando"
-        class="top-1/2 left-1/2 -translate-x-1/2 z-10 relative h-[400px] md:h-[800px]"
+        class="top-1/2 left-1/2 -translate-x-1/2 z-10 relative h-[400px] xl:h-[800px]"
       />
     </div>
   </section>
 
   <section
-    class="font-medium text-center italic flex flex-col md:flex-row md:justify-between
-     items-center gap-5 py-10 md:px-42 bg-cover bg-center px-6"
+    class="font-medium text-center italic flex flex-col xl:flex-row xl:justify-between
+     items-center gap-5 py-10 md:py-12  md:px-16 xl:px-42 bg-cover bg-center px-6"
     style="background-image: url('/img/section-bg.png');"
   >
-    <span class="text-2xl md:text-3xl text-balance md:max-w-[380px]"
+    <span class="text-2xl xl:text-3xl text-balance xl:max-w-[380px]"
       >¿Listo para dar tu <span class="font-extrabold">primer paso</span> en el baile?</span
     >
     <a
       href="/"
-      class="bg-background text-primary text-xl font-semibold py-2 px-8 md:text-2xl "
+      class="bg-background text-primary text-xl font-semibold py-2 px-8 xl:text-2xl "
       >Empieza aquí</a
     >
   </section>
 
-  <section class="flex flex-col items-center mx-6 gap-15 my-20">
-    <h2 class="text-white text-2xl font-bold uppercase italic text-balance md:text-3xl">
+  <section class="flex flex-col items-center px-6 md:px-16 xl:px-42 gap-15 my-20">
+    <h2 class="text-white text-2xl font-bold uppercase italic text-balance md:text-3xl xl:text-4xl">
       <span class="text-primary">Testimonios</span> de alumnos
     </h2>
     <TestimonyCarrousel client:load />
   </section>
 
-  <section class="flex flex-col items-center px-6 md:px-42 gap-15 my-20">
-    <h2 class="text-white text-2xl font-bold uppercase italic text-balance md:text-4xl">
+  <section class="flex flex-col items-center px-6 md:px-16 xl:px-42 gap-15 my-20">
+    <h2 class="text-white text-2xl md:text-3xl xl:text-4xl font-bold uppercase italic text-balance">
       <span class="text-primary">Baile</span> en acción
     </h2>
     <div class="flex w-full gap-3 items-end">
@@ -125,11 +124,11 @@ import VideoGalery from "../components/VideoGalery";
     </div>
   </section>
   <section
-    class="w-full px-6 md:px-42 font-medium text-center italic flex flex-col items-center gap-5 md:gap-8 py-10 md:py-12 bg-cover md:justify-between"
+    class="w-full px-6 md:px-16 xl:px-42 font-medium text-center italic flex flex-col items-center gap-5 xl:gap-8 py-10 md:py-12 bg-cover xl:justify-between"
     style="background-image: url('/img/section-bg.png');"
   >
     <div class="flex flex-col">
-      <span class="text-2xl md:text-3xl text-balance"
+      <span class="text-2xl xl:text-3xl text-balance"
         >¡Tu momento de bailar <span class="font-extrabold">empieza ahora!</span
         >
         <br />
@@ -138,7 +137,7 @@ import VideoGalery from "../components/VideoGalery";
     </div>
     <a
       href="/"
-      class="bg-background text-primary text-xl md:text-2xl font-semibold py-2 md:py-3 px-8 md:px-10"
+      class="bg-background text-primary text-xl xl:text-2xl font-semibold py-2 xl:py-3 px-8 xl:px-10"
       >Reserva tu clase hoy</a
     >
   </section>
