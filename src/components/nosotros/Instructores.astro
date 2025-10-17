@@ -1,0 +1,27 @@
+---
+const { nombre, especialidad, añosExp, frase, imgProfesor, isRight } =
+  Astro.props;
+---
+
+<div class="w-full flex flex-col relative items-center">
+  <div class="w-5/6 relative">
+    <img
+      src="/img/profesores/profesor-bg.png"
+      alt=""
+      width="100%"
+      class="object-cover"
+    />
+    <img src={imgProfesor} alt={nombre} width="100%" class="absolute bottom-0" />
+  </div>
+  <span
+    class={`bg-primary text-background absolute z-20 uppercase font-bold ${isRight ? "right-0" : "left-0"} top-1/4 px-5 py-2 shadow-[0_10px_17px_rgba(0,0,0,0.85)]`}
+    >{añosExp} años Exp.</span
+  >
+  <div class="bg-primary px-6 py-10 flex flex-col w-5/6">
+    <span class="text-white font-bold text-xl">{nombre}</span>
+    <span class="text-white mt-2 font-medium">{especialidad}</span>
+    <p class="text-white mt-4 text-balance">
+      "{frase}"
+    </p>
+  </div>
+</div>

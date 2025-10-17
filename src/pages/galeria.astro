@@ -1,0 +1,47 @@
+---
+import NavBar from "../components/NavBar.astro";
+import Layout from "../layouts/layout.astro";
+---
+
+<Layout>
+  <section
+    class="flex flex-col items-center px-6 relative bg-cover"
+    style="background-image: var(--gradient-bg-hero), url(/img/galeria-cover.png); background-repeat: no-repeat; background-position:center top;"
+  >
+    <NavBar />
+    <div class="flex flex-col gap-10 py-25 items-center">
+      <h1
+        class="text-white uppercase text-5xl font-bold italic text-balance text-center"
+      >
+        así se vive
+        <span class="text-primary">el baile</span>
+      </h1>
+      <p class="text-white text-balance text-center">
+        Nuestros <span class="text-primary font-bold">mejores momentos</span> en
+        <br /> movimiento
+      </p>
+      <button
+        class="text-primary border-primary border py-2 px-8 text-xl font-semibold"
+      >
+        Quiero ser parte
+      </button>
+    </div>
+  </section>
+
+  <section
+    class="px-6 font-medium text-center italic flex flex-col items-center gap-5 py-10 bg-cover mt-30"
+    style="background-image: url('/img/section-bg.png');"
+  >
+    <div class="flex flex-col text-2xl text-balance gap-2">
+      <span class="">
+        Estas son solo algunas de nuestas memorias...
+      </span>
+      <span class="font-bold"> Ahora es turno de crear las tuyas </span>
+    </div>
+    <a
+      href="/"
+      class="bg-background text-primary text-xl font-semibold py-2 px-8"
+      >Únete a la próxima clase</a
+    >
+  </section>
+</Layout>

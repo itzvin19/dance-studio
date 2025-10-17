@@ -1,0 +1,12 @@
+---
+import { Icon } from "astro-icon/components";
+const { frase, icono } = Astro.props;
+---
+
+<div
+  class="w-full border border-primary px-2 py-4 text-sm flex items-center gap-1"
+>
+  <Icon name={icono} class="text-primary text-xl" />
+  <div class="w-0.5 bg-primary h-full"></div>
+  <span class="text-white text-balance">{frase}</span>
+</div>

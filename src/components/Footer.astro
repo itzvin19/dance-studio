@@ -1,0 +1,57 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
+<div class="flex flex-col px-6 py-10 text-white gap-10">
+  <div class="flex w-full gap-10 justify-between">
+    <div class="flex flex-col w-1/3 gap-2 items-center">
+      <img src="/img/dance-studio-logo.png" alt="dance-studio-logo" loading="lazy"/>
+      <div class="flex gap-2 justify-center text-xl">
+        <Icon name="icon-youtube" class="text-white" />
+        <Icon name="icon-instagram" class="text-white" />
+        <Icon name="icon-twitter" class="text-white" />
+      </div>
+    </div>
+    <div class="w-full flex justify-between">
+      <div class="gap-3 flex flex-col">
+        <span class="font-medium text-white">Sobre Nosotros</span>
+        <ul class="text-white gap-2 flex flex-col">
+          <li>Historia</li>
+          <li>Misión</li>
+          <li>Valores</li>
+          <li>Instructores</li>
+        </ul>
+      </div>
+      <div class="gap-6 flex flex-col">
+        <span class="font-medium text-white">Estilos</span>
+        <ul class="text-white gap-2 flex flex-col">
+          <li>Salsa</li>
+          <li>Bachata</li>
+          <li>Timba</li>
+        </ul>
+      </div>
+      <div class="gap-6 md:flex flex-col hidden">
+        <span class="font-medium text-white">Galería</span>
+      </div>
+    </div>
+  </div>
+  <div class="flex justify-between text-sm flex-wrap gap-3">
+    <div class="flex gap-2 items-center">
+      <Icon name="icon-mail" class="text-white text-xl" />
+      <span class="font-medium">info@dancepoint.com</span>
+    </div>
+    <div class="flex gap-2 items-center">
+      <Icon name="icon-phone" class="text-white text-xl" />
+      <span class="font-medium">(01) 059 548</span>
+    </div>
+    <div class="flex gap-2 items-center">
+      <Icon name="icon-location" class="text-white text-xl" />
+      <span class="font-medium">Av. Alfredo Mendiola 5982</span>
+    </div>
+    <div class="hidden md:flex gap-2 justify-center text-xl">
+      <Icon name="icon-youtube" class="text-white" />
+      <Icon name="icon-instagram" class="text-white" />
+      <Icon name="icon-twitter" class="text-white" />
+    </div>
+  </div>
+</div>

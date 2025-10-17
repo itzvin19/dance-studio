@@ -1,0 +1,43 @@
+---
+import NavBar from "../components/NavBar.astro";
+import Layout from "../layouts/layout.astro";
+---
+
+<Layout>
+  <section
+    class="flex flex-col items-center px-6 relative bg-cover"
+    style="background-image: var(--gradient-bg-hero), url(/img/estilos-cover.png); background-repeat: no-repeat; background-position:center top;"
+  >
+    <NavBar />
+    <div class="flex flex-col gap-10 py-25 items-center">
+      <h1
+        class="text-white uppercase text-5xl font-bold italic text-balance text-center"
+      >
+        Descubre tu
+        <span class="text-primary">ritmo favorito</span>
+      </h1>
+      <p class="text-white text-balance text-center">
+        Aprende <span class="text-primary font-bold">Salsa, Bachata y Timba</span> desde cero
+        con un método fácil, divertido y pensado para todos.
+      </p>
+      <button
+        class="text-primary border-primary border py-2 px-8 text-xl font-semibold"
+      >
+        Empieza a bailar
+      </button>
+    </div>
+  </section>
+  <section
+    class="font-medium text-center italic flex flex-col items-center gap-5 py-10 bg-cover bg-center px-6"
+    style="background-image: url('/img/section-bg.png');"
+  >
+    <span class="text-2xl"
+      >¿Ya sabes con qué ritmo <span class="font-extrabold">empezar?</span></span
+    >
+    <a
+      href="/"
+      class="bg-background text-primary text-xl font-semibold py-2 px-8"
+      >Empieza aquí</a
+    >
+  </section>
+</Layout>

@@ -1,16 +1,144 @@
 ---
-
+import Layout from "../layouts/layout.astro";
+import ClaseContainer from "../components/index/ClaseContainer.astro";
+import NavBar from "../components/NavBar.astro";
+import { Icon } from "astro-icon/components";
+import TestimonyCarrousel from "../components/index/TestimonyCarrousel.tsx";
+import VideoGalery from "../components/VideoGalery";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout>
+  <section
+    class="flex flex-col items-center px-6 relative bg-cover"
+    style="background-image: var(--gradient-bg-hero), url(/img/dance-studio-cover.png); background-repeat: no-repeat; background-position:center top;"
+  >
+    <NavBar />
+    <div class="flex flex-col gap-10 py-22 items-center">
+      <h1
+        class="text-white uppercase text-5xl font-bold italic text-balance text-center"
+      >
+        <span class="text-primary">Aprende</span> a bailar desde 0
+      </h1>
+      <p class="text-white text-balance text-center">
+        No necesitas experiencia, aquí empezamos desde lo básico, <span
+          class="text-primary font-bold">paso a paso</span
+        >, hasta que disfrutes cada canción en la pista.
+      </p>
+      <button
+        class="text-primary border-primary border py-2 px-8 text-xl font-semibold"
+      >
+        Empieza hoy
+      </button>
+    </div>
+  </section>
+
+  <section class="flex flex-col mx-6 gap-10">
+    <h2
+      class="text-white text-2xl font-bold uppercase italic text-balance text-center"
+    >
+      <span class="text-primary"> Próximas </span> clases
+    </h2>
+    <div class="flex flex-col gap-4">
+      <ClaseContainer
+        titulo="Salsa para principiantes"
+        enlace="/"
+        img="/img/clases/dance-studio-salsa-principiantes.png"
+      />
+      <ClaseContainer
+        titulo="Bachata intermedio"
+        enlace="/"
+        img="/img/clases/dance-studio-bachata-intermedio.png"
+      />
+      <ClaseContainer
+        titulo="Timba con sabor cubano"
+        enlace="/"
+        img="/img/clases/dance-studio-timba-sabor-cubano.png"
+      />
+    </div>
+  </section>
+
+  <section class="flex flex-col mx-6 my-10 gap-15">
+    <h2
+      class="text-white text-2xl font-bold uppercase italic text-balance text-center"
+    >
+      Lo que nos hace <span class="text-primary">únicos</span>
+    </h2>
+
+    <div class="relative">
+      <span
+        class="absolute bg-gradient-to-r from-primary to-[#bd5139] text-balance font-semibold px-3 py-1 z-0 text-sm max-w-[120px] text-center uppercase"
+        >Aprende desde cero</span
+      >
+      <span
+        class="absolute bg-gradient-to-l from-primary to-[#bd5139] text-balance font-semibold px-3 py-1 z-0 text-sm max-w-[120px] text-center -right-0 top-20 uppercase"
+        >Horarios flexibles</span
+      >
+      <span
+        class="absolute bg-gradient-to-r from-primary to-[#bd5139] text-balance font-semibold px-3 py-1 z-20 text-sm max-w-[120px] text-center top-40 uppercase"
+        >Ambiente amigable</span
+      >
+      <span
+        class="absolute bg-gradient-to-l from-primary to-[#bd5139] text-balance font-semibold px-3 py-1 z-20 text-sm max-w-[120px] text-center top-60 right-0
+	   uppercase"
+        >Estilos Variados</span
+      >
+      <span
+        class="absolute bg-gradient-to-l from-primary to-[#bd5139] text-balance font-semibold px-3 py-1 z-20 text-sm text-center -bottom-2 left-1/2 -translate-x-1/2 uppercase"
+        >Ritmo Garantizado</span
+      >
+      <img
+        src="/img/dance-studio-pareja.png"
+        alt="Pareja Bailando"
+        class="top-1/2 left-1/2 -translate-x-1/2 z-10 relative h-full"
+      />
+    </div>
+  </section>
+
+  <section
+    class="font-medium text-center italic flex flex-col items-center gap-5 py-10 bg-cover bg-center px-6"
+    style="background-image: url('/img/section-bg.png');"
+  >
+    <span class="text-2xl"
+      >¿Listo para dar tu <span class="font-extrabold">primer paso</span> en el baile?</span
+    >
+    <a
+      href="/"
+      class="bg-background text-primary text-xl font-semibold py-2 px-8"
+      >Empieza aquí</a
+    >
+  </section>
+
+  <section class="flex flex-col items-center mx-6 gap-15 my-20">
+    <h2 class="text-white text-2xl font-bold uppercase italic text-bala">
+      <span class="text-primary">Testimonios</span> de alumnos
+    </h2>
+    <TestimonyCarrousel client:load />
+  </section>
+
+  <section class="flex flex-col items-center mx-6 gap-15 my-20">
+    <h2 class="text-white text-2xl font-bold uppercase italic text-balanceY">
+      <span class="text-primary">Baile</span> en acción
+    </h2>
+    <div class="flex w-full gap-3 items-end">
+      <VideoGalery client:load/>
+    </div>
+  </section>
+  <section
+    class="w-full px-6 font-medium text-center italic flex flex-col items-center gap-5 py-10 bg-cover"
+    style="background-image: url('/img/section-bg.png');"
+  >
+    <div class="flex flex-col">
+      <span class="text-2xl text-balance"
+        >¡Tu momento de bailar <span class="font-extrabold">empieza ahora!</span
+        >
+        <br />
+        No importa si nunca bailaste antes.</span
+      >
+    </div>
+    <a
+      href="/"
+      class="bg-background text-primary text-xl font-semibold py-2 px-8"
+      >Reserva tu clase hoy</a
+    >
+  </section>
+</Layout>

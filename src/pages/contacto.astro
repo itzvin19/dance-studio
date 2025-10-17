@@ -1,0 +1,46 @@
+---
+import NavBar from "../components/NavBar.astro";
+import Layout from "../layouts/layout.astro";
+---
+
+<Layout>
+  <section
+    class="flex flex-col items-center px-6 relative bg-cover"
+    style="background-image: var(--gradient-bg-hero), url(/img/galeria-cover.png); background-repeat: no-repeat; background-position:center top;"
+  >
+    <NavBar />
+    <div class="flex flex-col gap-10 py-25 items-center">
+      <h1
+        class="text-white uppercase text-5xl font-bold italic text-balance text-center"
+      >
+        ¿Listo para dar tu
+        <span class="text-primary">primer paso?</span>
+      </h1>
+      <p class="text-white text-balance text-center">
+        Estamos aquí para ayudarte a empezar tu camino en el baile. <span
+          class="text-primary font-bold"
+          >Escríbenos
+        </span>
+        <br />y te responderemos lo antes posible.
+      </p>
+      <button
+        class="text-primary border-primary border py-2 px-8 text-xl font-semibold"
+      >
+        Quiero ser parte
+      </button>
+    </div>
+  </section>
+  <section
+    class="px-6 font-medium text-center italic flex flex-col items-center gap-5 py-10 bg-cover mt-30"
+    style="background-image: url('/img/section-bg.png');"
+  >
+    <div class="flex flex-col text-2xl text-balance gap-2">
+      <span class="">Déjanos tus dudas</span>
+    </div>
+    <a
+      href="/"
+      class="bg-background text-primary text-xl font-semibold py-2 px-8"
+      >Contáctanos</a
+    >
+  </section>
+</Layout>

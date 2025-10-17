@@ -1,0 +1,110 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: Rubik;
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/Rubik-Regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: Rubik;
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/Rubik-Italic.woff2") format("woff2");
+}
+@font-face {
+  font-family: Rubik;
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/fonts/Rubik-Medium.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: Rubik;
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/fonts/Rubik-MediumItalic.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: Rubik;
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/fonts/Rubik-SemiBold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: Rubik;
+  font-style: italic;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/fonts/Rubik-SemiBoldItalic.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: Rubik;
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/fonts/Rubik-Bold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: Rubik;
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/fonts/Rubik-BoldItalic.woff2") format("woff2");
+}
+@font-face {
+  font-family: Rubik;
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("/fonts/Rubik-ExtraBold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: Rubik;
+  font-style: italic;
+  font-weight: 800;
+  font-display: swap;
+  src: url("/fonts/Rubik-ExtraBoldItalic.woff2") format("woff2");
+}
+
+@theme {
+  --color-background: #181818;
+  --color-primary: #fa5b31;
+}
+
+html,
+body {
+  font-family: "Rubik", "sans-serif";
+}
+
+:root {
+  --gradient-bg-hero: linear-gradient(
+    to top,
+    rgba(24 24, 24, 1) 0%,
+    rgba(24, 24, 24, 1) 10%,
+    rgba(24, 24, 24, 0.85) 100%
+  );
+
+  --gradient-bg-clases: linear-gradient(
+    to top,
+    rgba(57250, 91, 49, 0.2) 0%,
+    rgba(250, 91, 49, 0.1) 35%,
+    rgba(250, 91, 49, 0.05) 50%,
+    rgba(250, 91, 49, 0) 100%
+  );
+}
+.stroke-text {
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1px currentColor;
+}
