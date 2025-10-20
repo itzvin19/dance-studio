@@ -11,9 +11,46 @@ const links = [
 ---
 
 <header
-  class="w-full flex justify-between md:flex-row-reverse
- items-center py-4 xl:py-10"
+  class="w-full flex justify-between md:flex-row-reverse items-center py-4 xl:py-10"
 >
+  <!-- Botón y checkbox para barra lateral -->
+  <input type="checkbox" id="sidebar-toggle" class="hidden peer" />
+  <!-- Fondo negro detrás de la barra lateral -->
+  <div
+    class="fixed inset-0 z-40 bg-black/60 pointer-events-none opacity-0 peer-checked:opacity-100 peer-checked:pointer-events-auto transition-opacity duration-300"
+  >
+  </div>
+  <div
+    class="fixed top-0 left-0 h-full w-64 bg-background shadow-2xl text-white z-50 -translate-x-full peer-checked:translate-x-0 transition-transform duration-300 flex flex-col"
+  >
+    <label for="sidebar-toggle" class="block p-4 cursor-pointer text-right"
+      >✕</label
+    >
+    <nav class="p-6 flex flex-col">
+      <span class="text-gray-400 text-sm mb-8">Menú</span>
+      <ul class="flex flex-col gap-6">
+        {
+          links.map((link) => (
+            <li>
+              <a
+                href={link.href}
+                class={`${link.href === pathName ? "text-primary font-medium" : " text-white"}`}
+              >
+                {link.name}
+              </a>
+            </li>
+          ))
+        }
+        <li class="mt-6">
+          <a
+            href="/contacto"
+            class="py-2 px-3 bg-primary text-background font-medium"
+            >Contáctanos</a
+          >
+        </li>
+      </ul>
+    </nav>
+  </div>
   <nav class="hidden md:flex">
     <ul class="flex text-white gap-8">
       {
@@ -34,13 +71,17 @@ const links = [
         ))
       }
       <li>
-        <a href="/contacto" class="py-2 px-3 bg-primary text-background font-medium"
+        <a
+          href="/contacto"
+          class="py-2 px-3 bg-primary text-background font-medium"
           >Contáctanos</a
         >
       </li>
     </ul>
   </nav>
-  <Icon name="icon-menu" class={"text-2xl text-white md:hidden"} />
+  <label for="sidebar-toggle" class="md:hidden cursor-pointer p-2 text-white">
+    <Icon name="icon-menu" class={"text-2xl text-white md:hidden"} /></label
+  >
   <img
     src="/img/dance-studio-logo.png"
     alt="Dance Studio Logo"

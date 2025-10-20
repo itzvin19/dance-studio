@@ -2,8 +2,9 @@
 import Layout from "../layouts/layout.astro";
 import ClaseContainer from "../components/index/ClaseContainer.astro";
 import NavBar from "../components/NavBar.astro";
-import TestimonyCarrousel from "../components/index/TestimonyCarrousel.tsx";
+import TestimonyCarrouselMobile from "../components/index/TestimonyCarrouselMobile.tsx";
 import VideoGalery from "../components/VideoGalery";
+import TestimonyCarrousel from "../components/index/TestimonyCarrousel";
 ---
 
 <Layout>
@@ -112,7 +113,12 @@ import VideoGalery from "../components/VideoGalery";
     <h2 class="text-white text-2xl font-bold uppercase italic text-balance md:text-3xl xl:text-4xl">
       <span class="text-primary">Testimonios</span> de alumnos
     </h2>
-    <TestimonyCarrousel client:load />
+    <div class="w-full md:hidden">
+      <TestimonyCarrouselMobile client:visible />
+    </div>
+    <div class="w-full hidden md:flex">
+      <TestimonyCarrousel client:visible />
+    </div>
   </section>
 
   <section class="flex flex-col items-center px-6 md:px-16 xl:px-42 gap-15 my-20">
