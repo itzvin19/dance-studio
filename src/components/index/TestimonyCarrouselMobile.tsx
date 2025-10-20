@@ -126,13 +126,24 @@ const TestimonyCarrousel = () => {
                         onClick={() => setModalOpen(false)}
                     >
                         <motion.div
-                            className="w-[90vw] max-w-2xl h-[50vw] max-h-[70vh] bg-black flex items-center justify-center rounded-lg overflow-hidden shadow-lg relative"
+                            className="w-[90vw] max-w-4xl h-[50vw] max-h-[70vh] bg-black flex items-center justify-center rounded-lg overflow-hidden shadow-lg relative"
+                            initial={{ scale: 0.8, opacity: 0 }}
+                            animate={{ scale: 1, opacity: 1 }}
+                            exit={{ scale: 0.8, opacity: 0 }}
+                            transition={{ type: "spring", stiffness: 200, damping: 25 }}
                             onClick={e => e.stopPropagation()}
                         >
                             <video autoPlay controls className="w-full h-full object-contain bg-black">
-                                <source src={videoSrc} />
+                                <source src={videoSrc} type="video/mp4" />
+                                Tu navegador no soporta la reproducción de video.
                             </video>
-                            <button onClick={() => setModalOpen(false)} className="p-3 absolute top-0 sm:top-0 sm:right-1 md:top-2 right-2 text-white text-2xl md:text-3xl">×</button>
+                            <button 
+                                onClick={() => setModalOpen(false)} 
+                                className="p-3 absolute top-0 sm:top-0 sm:right-1 md:top-2 right-2 text-white text-2xl md:text-3xl hover:bg-white/20 rounded-full transition-colors duration-200"
+                                aria-label="Cerrar modal"
+                            >
+                                ×
+                            </button>
                         </motion.div>
                     </motion.div>
                 )}

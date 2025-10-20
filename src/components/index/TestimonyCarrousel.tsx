@@ -1,11 +1,13 @@
 import { useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { testimonials } from '../../data/testimonials'
 
 const TestimonyCarrousel = () => {
 
     const [carrouselItems, setCarrouselItems] = useState(testimonials);
     const [isAnimating, setIsAnimating] = useState(false);
+    const [modalOpen, setModalOpen] = useState(false);
+    const [videoSrc, setVideoSrc] = useState("/videos/baile.mp4");
 
     const changeCenterItem = (index: number, id: number) => {
         if (isAnimating) return; // Evitar nuevas animaciones si ya hay una en curso
@@ -32,6 +34,13 @@ const TestimonyCarrousel = () => {
         }
     }
 
+    const openVideoModal = (testimony: any) => {
+        if (testimony.videoUrl) {
+            setVideoSrc(testimony.videoUrl);
+        }
+        setModalOpen(true);
+    }
+
     return (
         <>
             <motion.div
@@ -54,7 +63,7 @@ const TestimonyCarrousel = () => {
                         if (isCenter) {
                             return (
                                 <motion.div
-                                    className='w-100 bg-primary text-white px-8 py-10 flex items-end relative overflow-hidden'
+                                    className='w-100 bg-primary text-white px-8 py-10 flex items-end relative overflow-hidden cursor-pointer'
                                     style={{
                                         height: `${height}px`,
                                         backgroundImage: `url(${t.thumbnail})`,
@@ -62,10 +71,12 @@ const TestimonyCarrousel = () => {
                                         backgroundPosition: 'center'
                                     }}
                                     key={t.id}
-                                    initial={{ scale: 0.9 }}
-                                    animate={{ scale: 1 }}
-                                    transition={{ duration: 0.2, ease: "easeOut" }}
+                                    initial={{ scale: 0.9, opacity: 0 }}
+                                    animate={{ scale: 1, opacity: 1 }}
+                                    exit={{ scale: 0.9, opacity: 0 }}
+                                    transition={{ duration: 0.3, ease: "easeOut" }}
                                     whileHover={{ scale: 1.02 }}
+                                    onClick={() => openVideoModal(t)}
                                 >
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
@@ -87,7 +98,7 @@ const TestimonyCarrousel = () => {
                         }
                         return (
                             <motion.div
-                                className='bg-primary text-white p-4 uppercase font-bold text-xl flex items-center cursor-pointer overflow-hidden'
+                                className='bg-primary text-white p-4 uppercase font-bold text-xl flex items-center cursor-pointer overflow-hidden relative'
                                 style={{
                                     height: `${height}px`,
                                     backgroundImage: `url(${t.thumbnail})`,
@@ -96,18 +107,60 @@ const TestimonyCarrousel = () => {
                                 }}
                                 key={t.id}
                                 onClick={() => changeCenterItem(i, t.id)}
-                                initial={{ scale: 0.9 }}
-                                animate={{ scale: 1 }}
+                                initial={{ scale: 0.9, opacity: 0 }}
+                                animate={{ scale: 1, opacity: 1 }}
+                                exit={{ scale: 0.9, opacity: 0 }}
                                 transition={{ duration: 0.4, ease: "easeOut" }}
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
                             >
-                                <span className='[writing-mode:sideways-lr] z-10'>{t.name}</span>
+                                {/* Overlay animado para reducir brightness al 50% */}
+                                <motion.div 
+                                    className="absolute inset-0 bg-black"
+                                    initial={{ opacity: 0.5 }}
+                                    animate={{ opacity: 0.5 }}
+                                    transition={{ duration: 0.4, ease: "easeInOut" }}
+                                ></motion.div>
+                                <span className='[writing-mode:sideways-lr] z-10 relative'>{t.name}</span>
                             </motion.div>
                         );
                     })
                 }
             </motion.div>
+
+            {/* Modal con fondo negro y video */}
+            <AnimatePresence>
+                {modalOpen && (
+                    <motion.div
+                        className="fixed inset-0 z-50 flex items-center justify-center bg-black/80"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        onClick={() => setModalOpen(false)}
+                    >
+                        <motion.div
+                            className="w-[90vw] max-w-4xl h-[50vw] max-h-[70vh] bg-black flex items-center justify-center rounded-lg overflow-hidden shadow-lg relative"
+                            initial={{ scale: 0.8, opacity: 0 }}
+                            animate={{ scale: 1, opacity: 1 }}
+                            exit={{ scale: 0.8, opacity: 0 }}
+                            transition={{ type: "spring", stiffness: 200, damping: 25 }}
+                            onClick={e => e.stopPropagation()}
+                        >
+                            <video autoPlay controls className="w-full h-full object-contain bg-black">
+                                <source src={videoSrc} type="video/mp4" />
+                                Tu navegador no soporta la reproducción de video.
+                            </video>
+                            <button 
+                                onClick={() => setModalOpen(false)} 
+                                className="p-3 absolute top-2 right-2 text-white text-2xl md:text-3xl hover:bg-white/20 rounded-full transition-colors duration-200"
+                                aria-label="Cerrar modal"
+                            >
+                                ×
+                            </button>
+                        </motion.div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </>
 
     )

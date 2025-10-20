@@ -42,9 +42,9 @@ const VideoGallery = () => {
     };
 
     return (
-        <div className="flex w-full xl:justify-center gap-6 items-end">
+        <div className="flex w-full xl:justify-center gap-6 xl:gap-10 items-end">
             {/* Primera columna */}
-            <div className="w-full xl:w-1/4 flex flex-col gap-6">
+            <div className="w-full xl:w-1/5 flex flex-col gap-6 xl:gap-10">
                 {visibleVideos.slice(0, 2).map((v) => (
                     <motion.div
                         key={v.id}
@@ -52,7 +52,7 @@ const VideoGallery = () => {
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
                         transition={{ duration: 0.4 }}
-                        className="w-full bg-primary h-[220px] xl:h-[380px] hover:scale-105 duration-150 cursor-pointer"
+                        className="w-full bg-primary h-[220px] xl:h-[300px] hover:scale-105 duration-150 cursor-pointer"
                         onClick={() => setSelectedVideo(v)}
                     >
                         <video autoPlay muted loop className="w-full h-full object-cover">
@@ -62,7 +62,7 @@ const VideoGallery = () => {
                 ))}
             </div>
             {/* Segunda columna */}
-            <div className="w-full xl:w-1/4 flex flex-col gap-6">
+            <div className="w-full xl:w-1/5 flex flex-col gap-6 xl:gap-10">
                 {visibleVideos.slice(2, 4).map((v) => (
                     <motion.div
                         key={v.id}
@@ -70,7 +70,7 @@ const VideoGallery = () => {
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
                         transition={{ duration: 0.4 }}
-                        className="w-full bg-primary h-[220px] xl:h-[380px] hover:scale-105 duration-150 cursor-pointer"
+                        className="w-full bg-primary h-[220px] xl:h-[300px] hover:scale-105 duration-150 cursor-pointer"
                         onClick={() => setSelectedVideo(v)}
                     >
                         <video autoPlay muted loop className="w-full h-full object-cover">
@@ -110,7 +110,7 @@ const VideoGallery = () => {
                 </div>
             </div>
             {/* Tercera columna solo en md+ */}
-            <div className="w-full xl:w-1/4 hidden xl:flex flex-col gap-6">
+            <div className="w-full xl:w-1/5 hidden xl:flex flex-col gap-6 xl:gap-10">
                 {visibleVideos.slice(4, 6).map((v) => (
                     <motion.div
                         key={v.id}
@@ -118,7 +118,7 @@ const VideoGallery = () => {
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
                         transition={{ duration: 0.4 }}
-                        className="w-full bg-primary h-[220px] xl:h-[380px] hover:scale-105 duration-150 cursor-pointer"
+                        className="w-full bg-primary h-[220px] xl:h-[300px] hover:scale-105 duration-150 cursor-pointer"
                         onClick={() => setSelectedVideo(v)}
                     >
                         <video autoPlay muted loop className="w-full h-full object-cover">
@@ -131,21 +131,31 @@ const VideoGallery = () => {
             <AnimatePresence>
                 {selectedVideo && (
                     <motion.div
-                        className="fixed inset-0 z-50 flex items-center justify-center bg-black/90"
+                        className="fixed inset-0 z-50 flex items-center justify-center bg-black/80"
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
                         onClick={() => setSelectedVideo(null)}
                     >
                         <motion.div
-                            layoutId={`video-${selectedVideo.id}`}
-                            className="w-[90vw] max-w-2xl h-[50vw] max-h-[70vh] bg-black flex items-center justify-center rounded-lg overflow-hidden shadow-lg relative"
+                            className="w-[90vw] max-w-4xl h-[50vw] max-h-[70vh] bg-black flex items-center justify-center rounded-lg overflow-hidden shadow-lg relative"
+                            initial={{ scale: 0.8, opacity: 0 }}
+                            animate={{ scale: 1, opacity: 1 }}
+                            exit={{ scale: 0.8, opacity: 0 }}
+                            transition={{ type: "spring", stiffness: 200, damping: 25 }}
                             onClick={e => e.stopPropagation()}
                         >
                             <video autoPlay controls className="w-full h-full object-contain bg-black">
-                                <source src={selectedVideo.videoSrc} />
+                                <source src={selectedVideo.videoSrc} type="video/mp4" />
+                                Tu navegador no soporta la reproducción de video.
                             </video>
-                            <button onClick={() => setSelectedVideo(null)} className="absolute top-0 xl:top-2 xl:right-0 sm:right-12 text-white text-4xl">×</button>
+                            <button 
+                                onClick={() => setSelectedVideo(null)} 
+                                className="p-3 absolute top-0 sm:top-0 sm:right-1 md:top-2 right-2 text-white text-2xl md:text-3xl hover:bg-white/20 rounded-full transition-colors duration-200"
+                                aria-label="Cerrar modal"
+                            >
+                                ×
+                            </button>
                         </motion.div>
                     </motion.div>
                 )}
