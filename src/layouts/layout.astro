@@ -2,15 +2,43 @@
 import "../styles/global.css";
 import Footer from "../components/Footer.astro";
 import { ClientRouter } from "astro:transitions";
+
+interface Props {
+  title: string;
+  description: string;
+  keywords?: string;
+}
+
+const { 
+  title = "Dance Studio - Academia de Baile en Lima", 
+  description = "Aprende a bailar salsa, bachata y timba desde cero. Clases para todos los niveles en Lima.",
+  keywords = "clases de baile, academia de baile, salsa, bachata, timba, Lima, Perú"
+} = Astro.props;
 ---
 
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="keywords" content={keywords} />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={Astro.url} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content="/img/dance-studio-logo.png" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={Astro.url} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content="/img/dance-studio-logo.png" />
   </head>
   <ClientRouter />
   <body class="bg-background">
