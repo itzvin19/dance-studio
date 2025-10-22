@@ -24,24 +24,23 @@ import { Icon } from "astro-icon/components";
     </div>
     <div class="w-3/4 md:w-full 2xl:w-1/2 flex justify-between">
       <div class="gap-3 flex flex-col">
-        <span class="font-medium text-white xl:text-lg">Sobre Nosotros</span>
+        <a class="font-medium text-white xl:text-lg hover:text-primary transition-colors" href="/nosotros">Sobre Nosotros</a>
         <ul class="text-white gap-2 xl:gap-4 flex flex-col">
-          <li>Historia</li>
-          <li>Misión</li>
-          <li>Valores</li>
-          <li>Instructores</li>
+          <li><a href="/nosotros#historia" class="hover:text-primary transition-colors">Historia</a></li>
+          <li><a href="/nosotros#valores" class="hover:text-primary transition-colors">Misión y Valores</a></li>
+          <li><a href="/nosotros#instructores" class="hover:text-primary transition-colors">Instructores</a></li>
         </ul>
       </div>
       <div class="gap-6 flex flex-col">
-        <span class="font-medium text-white xl:text-lg">Estilos</span>
+        <a class="font-medium text-white xl:text-lg hover:text-primary transition-colors" href="/estilos">Estilos</a>
         <ul class="text-white gap-2 xl:gap-4 flex flex-col">
-          <li>Salsa</li>
-          <li>Bachata</li>
-          <li>Timba</li>
+          <li><a href="/estilos" class="hover:text-primary transition-colors">Salsa</a></li>
+          <li><a href="/estilos" class="hover:text-primary transition-colors">Bachata</a></li>
+          <li><a href="/estilos" class="hover:text-primary transition-colors">Timba</a></li>
         </ul>
       </div>
       <div class="gap-6 md:flex flex-col hidden">
-        <span class="font-medium text-white xl:text-lg">Galería</span>
+        <a class="font-medium text-white xl:text-lg hover:text-primary transition-colors" href="/galeria">Galería</a>
       </div>
     </div>
   </div>
