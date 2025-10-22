@@ -114,10 +114,10 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  width: 8%; 
+  width: 8%;
   height: 3.5%;
-  background-color: #181818; 
-  clip-path: polygon(0 0, 0 200%, 100% 0); 
+  background-color: #181818;
+  clip-path: polygon(0 0, 0 200%, 100% 0);
   z-index: 2;
 }
 
@@ -127,9 +127,15 @@ body {
   top: 0;
   right: 0;
   width: 92%;
-  height: 3.5%; 
-  background-color: #181818; 
+  height: 3.5%;
+  background-color: #181818;
   clip-path: polygon(0 0, 100% 2000%, 100% 0);
   z-index: 4;
 }
 
+option {
+  background-color: #181818; /* asumiendo que este es tu color de fondo */
+  color: white;
+  padding: 1rem;
+  border: 1px solid white;
+}

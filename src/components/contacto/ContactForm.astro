@@ -1,0 +1,80 @@
+<div
+  class="flex flex-col xl:flex-row bg-gradient-to-r from-background to-[#202020] shadow-2xl"
+>
+  <div class="h-30 w-full xl:w-2/5 xl:h-auto">
+    <img
+      src="/img/contacto-form.png"
+      alt="Dance Studio Contact"
+      loading="lazy"
+      class="w-full h-full object-cover object-[center_-50px] xl:object-center brightness-40"
+    />
+  </div>
+  <form class="flex flex-col text-white px-6 py-8 gap-8">
+    <div class="w-full flex flex-col xl:flex-row gap-8">
+      <label class="font-medium">
+        Nombres
+        <input
+          type="text"
+          required
+          class="w-full mt-2 p-2 font-normal bg-white/10"
+        />
+      </label>
+      <label class="font-medium">
+        Apellidos
+        <input
+          type="text"
+          required
+          class="w-full mt-2 p-2 font-normal bg-white/10"
+        />
+      </label>
+    </div>
+    <div class="w-full flex flex-col xl:flex-row gap-8">
+      <label class="font-medium">
+        E-mail
+        <input
+          type="email"
+          required
+          class="w-full mt-2 p-2 font-normal bg-white/10"
+        />
+      </label>
+      <label>
+        Celular
+        <input
+          type="tel"
+          required
+          class="w-full mt-2 p-2 font-normal bg-white/10"
+        />
+      </label>
+    </div>
+    <div class="w-full flex flex-col xl:flex-row gap-8">
+      <label class="font-medium w-full">
+        Estilo de Baile
+        <select class="w-full mt-2 p-2 font-normal bg-white/10">
+          <option value="Salsa">Salsa</option>
+          <option value="Bachata">Bachata</option>
+          <option value="Timba">Timba</option>
+        </select>
+      </label>
+      <label class="font-medium w-full">
+        Sede
+        <select class="w-full mt-2 p-2 font-normal bg-white/10">
+          <option value="Los Olivos">Los Olivos</option>
+          <option value="San Miguel">San Miguel</option>
+          <option value="Miraflores">Miraflores</option>
+        </select>
+      </label>
+    </div>
+    <label>
+      Mensaje
+      <textarea
+        rows="4"
+        required
+        class="w-full mt-2 p-2 font-normal bg-white/10"></textarea>
+    </label>
+    <input
+      type="submit"
+      class="bg-primary text-background py-3 px-6 font-semibold w-full mx-auto uppercase text-xl cursor-pointer hover:scale-101 transition-all duration-150"
+      value="Enviar Mensaje"
+    />
+  </form>
+</div>

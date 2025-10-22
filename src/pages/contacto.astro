@@ -1,33 +1,100 @@
 ---
+import { Icon } from "astro-icon/components";
+import ContactForm from "../components/contacto/ContactForm.astro";
 import NavBar from "../components/NavBar.astro";
 import Layout from "../layouts/layout.astro";
+import { constants } from "../data/constants";
 ---
 
 <Layout>
   <section
-    class="flex flex-col items-center px-6 relative bg-cover"
-    style="background-image: var(--gradient-bg-hero), url(/img/galeria-cover.png); background-repeat: no-repeat; background-position:center top;"
+    class="flex flex-col items-center md:px-16 xl:px-42 2xl:px-46 relative bg-cover"
+    style="background-image: var(--gradient-bg-hero), url(/img/contacto-cover.png); background-repeat: no-repeat; background-position:center center;"
   >
     <NavBar />
-    <div class="flex flex-col gap-10 py-25 items-center">
+    <div class="flex flex-col gap-10 py-22 md:py-28 xl:py-10 2xl:py-34 items-center">
       <h1
-        class="text-white uppercase text-5xl font-bold italic text-balance text-center"
+        class="text-white uppercase text-5xl xl:text-6xl font-bold italic text-balance text-center"
       >
         ¿Listo para dar tu
         <span class="text-primary">primer paso?</span>
       </h1>
-      <p class="text-white text-balance text-center">
+      <p class="text-white text-balance text-center xl:text-xl max-w-prose">
         Estamos aquí para ayudarte a empezar tu camino en el baile. <span
           class="text-primary font-bold"
           >Escríbenos
         </span>
-        <br />y te responderemos lo antes posible.
+        y te responderemos lo antes posible.
       </p>
       <button
-        class="text-primary border-primary border py-2 px-8 text-xl font-semibold"
+        class="text-primary border-primary border py-2 px-8 text-xl xl:text-2xl font-semibold cursor-pointer hover:scale-105 transition-all duration-150"
       >
         Quiero ser parte
       </button>
+    </div>
+  </section>
+  <section
+    class="flex flex-col items-center px-6 md:px-16 xl:px-42 2xl:px-46 gap-15 my-10"
+  >
+    <h2
+      class="text-white text-2xl font-bold uppercase italic text-balance md:text-3xl xl:text-4xl"
+    >
+      Déjanos un <span class="text-primary">mensaje</span>
+    </h2>
+    <div class="w-full 2xl:w-4/5">
+      <ContactForm />
+    </div>
+  </section>
+  <section
+    class="flex flex-col items-center px-6 md:px-16 xl:px-42 2xl:px-46 gap-15 mt-16 xl:mt-20"
+  >
+    <h2
+      class="text-white text-2xl font-bold uppercase italic text-balance md:text-3xl xl:text-4xl"
+    >
+      <span class="text-primary">Contáctanos</span>
+    </h2>
+    <div class="w-full">
+      <div class="flex flex-col xl:flex-row gap-15 xl:items-center">
+        <div class="w-full xl:w-1/3 flex flex-col gap-6">
+          <div class="flex items-end gap-4">
+            <Icon name="icon-mail" class="text-white text-3xl" />
+            <div class="text-white flex flex-col">
+              <span>Email</span>
+              <span class="text-primary font-semibold"
+                >{constants.CONTACT_EMAIL}</span
+              >
+            </div>
+          </div>
+          <div class="flex items-end gap-4">
+            <Icon name="icon-location" class="text-white text-3xl" />
+            <div class="text-white flex flex-col">
+              <span>Sede Principal</span>
+              <span class="text-primary font-semibold">{constants.ADDRESS}</span
+              >
+            </div>
+          </div>
+          <div class="flex items-end gap-4">
+            <Icon name="icon-phone" class="text-white text-3xl" />
+            <div class="text-white flex flex-col">
+              <span>Informes e Inscripciones</span>
+              <span class="text-primary font-semibold"
+                >{constants.CONTACT_PHONE}</span
+              >
+            </div>
+          </div>
+        </div>
+        <div class="x-full xl:w-2/3">
+          <!-- Map Placeholder -->
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3900.1234567890123!2d-77.04212345678901!3d-12.046123456789012!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c12345678901%3A0x123456789abcdef!2sDance%20Studio!5e0!3m2!1sen!2spe!4v1610000000000!5m2!1sen!2spe"
+            width="100%"
+            height="250"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
     </div>
   </section>
   <section
