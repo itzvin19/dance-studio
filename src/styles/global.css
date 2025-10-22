@@ -91,7 +91,7 @@ body {
 :root {
   --gradient-bg-hero: linear-gradient(
     to top,
-    rgba(24 24, 24, 1) 0%,
+    rgba(24, 24, 24, 1) 0%,
     rgba(24, 24, 24, 1) 10%,
     rgba(24, 24, 24, 0.85) 100%
   );
