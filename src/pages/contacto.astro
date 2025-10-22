@@ -4,6 +4,7 @@ import ContactForm from "../components/contacto/ContactForm.astro";
 import NavBar from "../components/NavBar.astro";
 import Layout from "../layouts/layout.astro";
 import { constants } from "../data/constants";
+import MapContainer from "../components/contacto/MapContainer";
 ---
 
 <Layout>
@@ -12,7 +13,9 @@ import { constants } from "../data/constants";
     style="background-image: var(--gradient-bg-hero), url(/img/contacto-cover.png); background-repeat: no-repeat; background-position:center center;"
   >
     <NavBar />
-    <div class="flex flex-col gap-10 py-22 md:py-28 xl:py-10 2xl:py-34 items-center">
+    <div
+      class="flex flex-col gap-10 py-22 md:py-28 xl:py-10 2xl:py-34 items-center"
+    >
       <h1
         class="text-white uppercase text-5xl xl:text-6xl font-bold italic text-balance text-center"
       >
@@ -84,15 +87,7 @@ import { constants } from "../data/constants";
           </div>
         </div>
         <div class="x-full xl:w-2/3">
-          <!-- Map Placeholder -->
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3900.1234567890123!2d-77.04212345678901!3d-12.046123456789012!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c12345678901%3A0x123456789abcdef!2sDance%20Studio!5e0!3m2!1sen!2spe!4v1610000000000!5m2!1sen!2spe"
-            width="100%"
-            height="250"
-            style="border:0;"
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <MapContainer client:only="reactjs"/>
         </div>
       </div>
     </div>
