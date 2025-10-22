@@ -99,7 +99,7 @@ const MapContainer = () => {
     <div className="relative">
       <div 
         id="map" 
-        className="w-full h-[400px] md:h-[500px] rounded-lg shadow-2xl relative z-10"
+        className="w-full h-[300px] md:h-[400px] rounded-lg shadow-2xl relative z-10"
       />
     </div>
   );
