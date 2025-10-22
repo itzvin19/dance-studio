@@ -1,46 +1,52 @@
 ---
 import NavBar from "../components/NavBar.astro";
+import VideoGallery from "../components/VideoGalery";
 import Layout from "../layouts/layout.astro";
 ---
 
 <Layout>
   <section
-    class="flex flex-col items-center px-6 relative bg-cover"
+    class="flex flex-col items-center px-6 md:px-16 xl:px-42 2xl:px-46 relative bg-cover"
     style="background-image: var(--gradient-bg-hero), url(/img/galeria-cover.png); background-repeat: no-repeat; background-position:center top;"
   >
     <NavBar />
-    <div class="flex flex-col gap-10 py-25 items-center">
+    <div class="flex flex-col gap-10 py-22 md:py-28 xl:py-30 2xl:py-38 items-center">
       <h1
         class="text-white uppercase text-5xl font-bold italic text-balance text-center"
       >
         así se vive
         <span class="text-primary">el baile</span>
       </h1>
-      <p class="text-white text-balance text-center">
+      <p class="text-white text-balance text-center max-w-prose">
         Nuestros <span class="text-primary font-bold">mejores momentos</span> en
         <br /> movimiento
       </p>
       <button
-        class="text-primary border-primary border py-2 px-8 text-xl font-semibold"
+        class="text-primary border-primary border py-2 px-8 text-xl font-semibold cursor-pointer hover:scale-105 transition-all duration-150"
       >
         Quiero ser parte
       </button>
     </div>
   </section>
-
+  <section class="flex flex-col items-center px-6 md:px-16 xl:px-42 2xl:px-46 gap-15">
+    <h2 class="text-white text-2xl md:text-3xl xl:text-4xl font-bold uppercase italic text-balance">
+      <span class="text-primary">Baile</span> en acción
+    </h2>
+    <div class="flex w-full gap-3 items-end">
+      <VideoGallery client:load />
+    </div>
+  </section>
   <section
     class="px-6 font-medium text-center italic flex flex-col items-center gap-5 py-10 bg-cover mt-30"
     style="background-image: url('/img/section-bg.png');"
   >
     <div class="flex flex-col text-2xl text-balance gap-2">
-      <span class="">
-        Estas son solo algunas de nuestas memorias...
-      </span>
+      <span class=""> Estas son solo algunas de nuestas memorias... </span>
       <span class="font-bold"> Ahora es turno de crear las tuyas </span>
     </div>
     <a
       href="/"
-      class="bg-background text-primary text-xl font-semibold py-2 px-8"
+      class="bg-background text-primary text-xl font-semibold py-2 px-8 cursor-pointer hover:scale-105 transition-all duration-150"
       >Únete a la próxima clase</a
     >
   </section>
