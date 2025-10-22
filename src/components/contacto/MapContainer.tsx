@@ -41,7 +41,7 @@ const MapContainer = () => {
       }).setView([locations[0].lat, locations[0].lng], 13);
 
       // Añadir el tile layer por defecto de OpenStreetMap
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.webp', {
         maxZoom: 19,
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
       }).addTo(map);
