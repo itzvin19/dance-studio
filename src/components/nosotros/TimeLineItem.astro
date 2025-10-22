@@ -1,0 +1,27 @@
+---
+const { title, year, imageSrc, reverse } = Astro.props;
+---
+
+<div class={`flex ${reverse ? "flex-row-reverse" : ""} gap-20 w-full items-center`}>
+  <div class="relative w-1/2">
+    <span
+      class={`text-primary text-5xl font-bold stroke-text ${reverse ? "[writing-mode:sideways-rl] -right-9":"[writing-mode:sideways-lr] -left-9"} absolute z-0  top-1/2 -translate-y-1/2`}
+      >{year}</span
+    >
+    <img
+      src={imageSrc}
+      alt={`${title} Dance Studio`}
+      class="z-10 relative brightness-30 h-35 md:h-72 w-full object-cover shadow-2xl"
+    />
+  </div>
+  <div class="flex flex-col w-1/2 gap-10">
+    <div
+      class="w-32 text-center bg-primary text-xl uppercase font-bold px-6 py-1 shadow-2xl bg-gradient-to-r from-primary to-[#702615]"
+    >
+      {title}
+    </div>
+    <p class="text-balance text-white">
+      <slot />
+    </p>
+  </div>
+</div>

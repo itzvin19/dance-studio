@@ -1,98 +1,129 @@
 ---
 import NavBar from "../components/NavBar.astro";
 import Instructores from "../components/nosotros/Instructores.astro";
+import TimeLine from "../components/nosotros/TimeLine.astro";
+import TimeLineMobile from "../components/nosotros/TimeLineMobile.astro";
 import ValorContainer from "../components/nosotros/ValorContainer.astro";
 import Layout from "../layouts/layout.astro";
 ---
 
 <Layout>
   <section
-    class="flex flex-col items-center px-6 relative bg-cover"
+    class="flex flex-col items-center px-6 md:px-16 xl:px-42 2xl:px-46 relative bg-cover"
     style="background-image: var(--gradient-bg-hero), url(/img/nosotros-cover.png); background-repeat: no-repeat; background-position:center top;"
   >
     <NavBar />
-    <div class="flex flex-col gap-10 py-25 items-center">
+    <div class="flex flex-col gap-10 py-22 md:py-28 xl:py-30 2xl:py-34 items-center">
       <h1
-        class="text-white uppercase text-5xl font-bold italic text-balance text-center"
+        class="text-white uppercase text-5xl xl:text-6xl font-bold italic text-balance text-center"
       >
         <span class="text-primary">Conócenos</span>
       </h1>
-      <p class="text-white text-balance text-center">
+      <p class="text-white md:text-lg xl:text-xl text-balance text-center">
         Creamos este espacio para que <span class="text-primary"
           >cualquier persona</span
         >, sin importar la edad o experiencia.
       </p>
       <button
-        class="text-primary border-primary border py-2 px-8 text-xl font-semibold"
+        class="text-primary border-primary border py-2 px-8 text-xl font-semibold cursor-pointer"
       >
         Únete a nosotros
       </button>
     </div>
   </section>
-  <section class="px-6">
+  <section class="px-6 md:px-16 xl:px-42 2xl:px-46 flex flex-col gap-20 w-full">
     <h2
-      class="text-white text-2xl font-bold uppercase italic text-balance text-center"
+      class="text-white text-2xl md:text-3xl xl:text-4xl font-bold uppercase italic text-balance text-center"
     >
-      <span class="text-primary font-bold
-      "> Nuestra historia </span> en movimiento
+      <span class="text-primary font-bold"> Nuestra historia </span> en movimiento
     </h2>
+    <div class="md:hidden">
+      <TimeLineMobile />
+    </div>
+    <div class=" hidden md:flex justify-center">
+      <TimeLine />
+    </div>
   </section>
-  <section class="flex flex-col px-6 my-20 gap-10">
+  <section class="flex flex-col px-6 md:px-16 xl:px-42 2xl:px-46 my-20 md:my-28 gap-10 xl:gap-14 2xl:gap-16">
     <h2
-      class="text-white text-2xl font-bold uppercase italic text-balance text-center"
+      class="text-white text-2xl md:text-3xl xl:text-4xl font-bold uppercase italic text-balance text-center"
     >
       <span class="text-primary"> Misión </span>y valores
     </h2>
 
-    <div class="flex flex-col gap-4">
-      <span class="uppercase text-primary font-black text-2xl stroke-text"
-        >Misión</span
-      >
-      <p
-        class="text-white text-balance border border-primary text-center mx-auto px-4 py-5 max-w-prose"
-      >
-        "Que bailar sea posible para todos, desde cero y sin miedo"
-      </p>
-    </div>
+    <div class="w-full flex flex-col md:flex-row gap-10 md:gap-5 xl:gap-15 md:items-end md:justify-center">
+      <div class="flex flex-col gap-4 md:w-1/3 2xl:w-1/4">
+        <span class="uppercase text-primary font-black text-2xl xl:text-3xl stroke-text"
+          >Misión</span
+        >
+        <p
+          class="text-white text-balance border border-primary text-center mx-auto px-4 py-5 max-w-prose xl:text-lg"
+        >
+          "Que bailar sea posible para todos, desde cero y sin miedo"
+        </p>
+      </div>
 
-    <div class="flex flex-col gap-4">
-      <span class="uppercase text-primary font-black text-2xl stroke-text"
-        >Valores</span
-      >
-      <div class="grid gap-x-3 gap-y-4 grid-cols-2">
-        <ValorContainer icono="icon-star" frase="Pasión por enseñar" />
-        <ValorContainer icono="icon-care" frase="Cercanía y paciencia" />
-        <ValorContainer icono="icon-smile" frase="Diversión en clase" />
-        <ValorContainer icono="icon-video" frase="Comunidad" />
+      <div class="flex flex-col gap-4 md:gap-6 w-full justify-center md:max-w-3/5 2xl:max-w-1/2">
+        <span class="uppercase text-primary font-black text-2xl xl:text-3xl stroke-text"
+          >Valores</span
+        >
+        <div class="grid gap-x-3 gap-y-4 grid-cols-2">
+          <ValorContainer icono="icon-star" frase="Pasión por enseñar" />
+          <ValorContainer icono="icon-care" frase="Cercanía y paciencia" />
+          <ValorContainer icono="icon-smile" frase="Diversión en clase" />
+          <ValorContainer icono="icon-video" frase="Comunidad" />
+        </div>
       </div>
     </div>
   </section>
-  <section class="flex flex-col gap-30">
+  <section class="flex flex-col gap-30 px-6 md:px-16 xl:px-42 2xl:px-46">
     <h2
-      class="text-white text-2xl font-bold uppercase italic text-balance text-center"
+      class="text-white text-2xl md:text-3xl xl:text-4xl font-bold uppercase italic text-balance text-center"
     >
-    Conoce a tus <br>
-    <span class="text-primary">instructores</span>
+      Conoce a tus <br />
+      <span class="text-primary">instructores</span>
     </h2>
-    <div class="grid grid-cols-1 px-6 w-full place-items-center gap-20">
-        <Instructores nombre="Lucia Magallanes" especialidad="Profesora de salsa" frase="Te enseñaré a que el 1-2-3 sea tu segundoo idioma." añosExp="5" isRight={true} imgProfesor="/img/profesores/lucia-magallanes.png" />
-        <Instructores nombre="Claudio León" añosExp="3" especialidad="Profesor de Timba" frase="Prometo que el balanceo de cadera se te hará natural." imgProfesor="/img/profesores/claudio-leon.png"/>
-        <Instructores nombre="Melina Ortiz" añosExp="10" especialidad="Profesora de Bachata" frase="En mis clases la timidez se queda fuera del salón." isRight={true} imgProfesor="/img/profesores/melina-ortiz.png"/>
+    <div
+      class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 w-full place-items-center gap-20 md:gap-12 md:gap-y-20"
+    >
+      <Instructores
+        nombre="Lucia Magallanes"
+        especialidad="Profesora de salsa"
+        frase="Te enseñaré a que el 1-2-3 sea tu segundoo idioma."
+        añosExp="5"
+        isRight={true}
+        imgProfesor="/img/profesores/lucia-magallanes.png"
+      />
+      <Instructores
+        nombre="Claudio León"
+        añosExp="3"
+        especialidad="Profesor de Timba"
+        frase="Prometo que el balanceo de cadera se te hará natural."
+        imgProfesor="/img/profesores/claudio-leon.png"
+      />
+      <Instructores
+        nombre="Melina Ortiz"
+        añosExp="10"
+        especialidad="Profesora de Bachata"
+        frase="En mis clases la timidez se queda fuera del salón."
+        isRight={true}
+        imgProfesor="/img/profesores/melina-ortiz.png"
+      />
     </div>
   </section>
   <section
-    class="px-6 font-medium text-center italic flex flex-col items-center gap-5 py-10 bg-cover mt-30"
+    class="px-6 md:px-16 xl:px-42 font-medium text-center italic flex flex-col items-center gap-5 xl:gap-8 py-10 xl:py-8 bg-cover mt-30"
     style="background-image: url('/img/section-bg.png');"
   >
     <div class="flex flex-col">
-      <span class="text-2xl text-balance">
+      <span class="text-2xl xl:text-3xl text-balance">
         ¡Conócenos en acción! <br />
         Ven a tu primera clase gratis
       </span>
     </div>
     <a
       href="/"
-      class="bg-background text-primary text-xl font-semibold py-2 px-8"
+      class="bg-background text-primary text-xl font-semibold py-2 xl:py-3 px-8 xl:px-10"
       >Reserva tu clase</a
     >
   </section>
