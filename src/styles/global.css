@@ -139,3 +139,7 @@ option {
   padding: 1rem;
   border: 1px solid white;
 }
+
+html {
+  scroll-behavior: smooth;
+}
