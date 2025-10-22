@@ -1,5 +1,6 @@
 ---
 import { Icon } from "astro-icon/components";
+import { constants } from "../data/constants";
 ---
 
 <div
@@ -24,43 +25,81 @@ import { Icon } from "astro-icon/components";
     </div>
     <div class="w-3/4 md:w-full 2xl:w-1/2 flex justify-between">
       <div class="gap-3 flex flex-col">
-        <a class="font-medium text-white xl:text-lg hover:text-primary transition-colors" href="/nosotros">Sobre Nosotros</a>
+        <a
+          class="font-medium text-white xl:text-lg hover:text-primary transition-colors"
+          href="/nosotros">Sobre Nosotros</a
+        >
         <ul class="text-white gap-2 xl:gap-4 flex flex-col">
-          <li><a href="/nosotros#historia" class="hover:text-primary transition-colors">Historia</a></li>
-          <li><a href="/nosotros#valores" class="hover:text-primary transition-colors">Misión y Valores</a></li>
-          <li><a href="/nosotros#instructores" class="hover:text-primary transition-colors">Instructores</a></li>
+          <li>
+            <a
+              href="/nosotros#historia"
+              class="hover:text-primary transition-colors">Historia</a>
+          </li>
+          <li>
+            <a
+              href="/nosotros#valores"
+              class="hover:text-primary transition-colors">Misión y Valores</a>
+          </li>
+          <li>
+            <a
+              href="/nosotros#instructores"
+              class="hover:text-primary transition-colors">Instructores</a>
+          </li>
         </ul>
       </div>
       <div class="gap-6 flex flex-col">
-        <a class="font-medium text-white xl:text-lg hover:text-primary transition-colors" href="/estilos">Estilos</a>
+        <a
+          class="font-medium text-white xl:text-lg hover:text-primary transition-colors"
+          href="/estilos">Estilos</a
+        >
         <ul class="text-white gap-2 xl:gap-4 flex flex-col">
-          <li><a href="/estilos" class="hover:text-primary transition-colors">Salsa</a></li>
-          <li><a href="/estilos" class="hover:text-primary transition-colors">Bachata</a></li>
-          <li><a href="/estilos" class="hover:text-primary transition-colors">Timba</a></li>
+          <li>
+            <a href="/estilos" class="hover:text-primary transition-colors"
+              >Salsa</a>
+          </li>
+          <li>
+            <a href="/estilos" class="hover:text-primary transition-colors"
+              >Bachata</a>
+          </li>
+          <li>
+            <a href="/estilos" class="hover:text-primary transition-colors"
+              >Timba</a>
+          </li>
         </ul>
       </div>
       <div class="gap-6 md:flex flex-col hidden">
-        <a class="font-medium text-white xl:text-lg hover:text-primary transition-colors" href="/galeria">Galería</a>
+        <a
+          class="font-medium text-white xl:text-lg hover:text-primary transition-colors"
+          href="/galeria">Galería</a
+        >
       </div>
     </div>
   </div>
-  <div class="flex justify-between 2xl:gap-30 text-sm xl:text-[16px] flex-wrap gap-3">
+  <div
+    class="flex justify-between 2xl:gap-30 text-sm xl:text-[16px] flex-wrap gap-3"
+  >
     <div class="flex gap-2 items-center">
       <Icon name="icon-mail" class="text-white text-xl" />
-      <span class="font-medium">info@dancepoint.com</span>
+      <span class="font-medium">{constants.CONTACT_EMAIL}</span>
     </div>
     <div class="flex gap-2 items-center">
       <Icon name="icon-phone" class="text-white text-xl" />
-      <span class="font-medium">(01) 059 548</span>
+      <span class="font-medium">{constants.CONTACT_PHONE}</span>
     </div>
     <div class="flex gap-2 items-center">
       <Icon name="icon-location" class="text-white text-xl" />
-      <span class="font-medium">Av. Alfredo Mendiola 5982</span>
+      <span class="font-medium">{constants.ADDRESS}</span>
     </div>
     <div class="hidden md:flex gap-2 justify-center text-xl xl:text-3xl">
-      <Icon name="icon-youtube" class="text-white" />
-      <Icon name="icon-instagram" class="text-white" />
-      <Icon name="icon-twitter" class="text-white" />
+      <a href={constants.YOUTUBE_URL}>
+        <Icon name="icon-youtube" class="text-white" />
+      </a>
+      <a href={constants.INSTAGRAM_URL}>
+        <Icon name="icon-instagram" class="text-white" />
+      </a>
+      <a href={constants.X_URL}>
+        <Icon name="icon-twitter" class="text-white" />
+      </a>
     </div>
   </div>
 </div>
