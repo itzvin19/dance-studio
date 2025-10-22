@@ -1,42 +1,76 @@
 ---
+import EstilosContainer from "../components/estilos/EstilosContainer";
 import NavBar from "../components/NavBar.astro";
 import Layout from "../layouts/layout.astro";
 ---
 
 <Layout>
   <section
-    class="flex flex-col items-center px-6 relative bg-cover"
+    class="flex flex-col items-center px-6 md:px-16 xl:px-42 2xl:px-46 relative bg-cover"
     style="background-image: var(--gradient-bg-hero), url(/img/estilos-cover.png); background-repeat: no-repeat; background-position:center top;"
   >
     <NavBar />
-    <div class="flex flex-col gap-10 py-25 items-center">
+    <div class="flex flex-col gap-10 py-22 md:py-14 xl:py-22 2xl:py-28 items-center">
       <h1
-        class="text-white uppercase text-5xl font-bold italic text-balance text-center"
+        class="text-white uppercase text-5xl xl:text-6xl font-bold italic text-balance text-center"
       >
         Descubre tu
         <span class="text-primary">ritmo favorito</span>
       </h1>
-      <p class="text-white text-balance text-center">
-        Aprende <span class="text-primary font-bold">Salsa, Bachata y Timba</span> desde cero
-        con un método fácil, divertido y pensado para todos.
+      <p class="text-white text-balance text-center xl:text-xl max-w-prose">
+        Aprende <span class="text-primary font-bold"
+          >Salsa, Bachata y Timba</span
+        > desde cero con un método fácil, divertido y pensado para todos.
       </p>
       <button
-        class="text-primary border-primary border py-2 px-8 text-xl font-semibold"
+        class="text-primary border-primary border py-2 px-8 text-xl font-semibold cursor-pointer hover:scale-105 transition-all duration-150"
+        
       >
         Empieza a bailar
       </button>
     </div>
   </section>
   <section
-    class="font-medium text-center italic flex flex-col items-center gap-5 py-10 bg-cover bg-center px-6"
+    class="flex flex-col px-6 md:px-16 xl:px-42 2xl:px-46 gap-10 xl:gap-14 my-10 md:my-16 xl:my-18 justify-center items-center"
+  >
+    <h2
+      class="text-white text-2xl md:text-3xl xl:text-4xl font-bold uppercase italic text-balance text-center"
+    >
+      <span class="text-primary"> Estilos </span> de baile
+    </h2>
+
+    <div class="w-full xl:w-5/7 2xl:w-1/2 flex flex-col gap-6 2xl:gap-10 justify-center">
+      <EstilosContainer
+        titulo="Salsa"
+        descripcion="La salsa es energía pura. Con nosotros aprenderás desde cero a moverte con soltura, mejorar tu coordinación y ganar confianza en cada paso. No importa si nunca bailaste, ¡en poco tiempo estarás disfrutando la pista como nunca!"
+        imgSrc="/img/estilos/salsa.png"
+        client:load
+      />
+      <EstilosContainer
+        titulo="Bachata"
+        descripcion="La bachata es pasión y ritmo. Te enseñamos desde lo básico hasta movimientos más avanzados, para que puedas bailar con estilo y sentir la música en cada paso. No necesitas experiencia previa, solo ganas de divertirte y aprender."
+        imgSrc="/img/estilos/bachata.png"
+        client:load
+      />
+      <EstilosContainer
+        titulo="Timba"
+        descripcion="¡La timba es pura energía cubana! Fusiona ritmos tradicionales con toques modernos para crear un estilo único y vibrante. Prepárate para movimientos explosivos, mucha diversión y una experiencia de baile incomparable."
+        imgSrc="/img/estilos/timba.png"
+        client:load
+      />
+    </div>
+  </section>
+  <section
+    class="font-medium text-center italic flex flex-col items-center gap-5 py-10 bg-cover bg-center px-6 md:py-12 xl:py-10 md:px-16 xl:px-42"
     style="background-image: url('/img/section-bg.png');"
   >
     <span class="text-2xl"
-      >¿Ya sabes con qué ritmo <span class="font-extrabold">empezar?</span></span
+      >¿Ya sabes con qué ritmo <span class="font-extrabold">empezar?</span
+      ></span
     >
     <a
       href="/"
-      class="bg-background text-primary text-xl font-semibold py-2 px-8"
+      class="bg-background text-primary text-xl font-semibold py-2 px-8 hover:scale-105 transition-all duration-150"
       >Empieza aquí</a
     >
   </section>
