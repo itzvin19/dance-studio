@@ -11,22 +11,29 @@ const links = [
 ---
 
 <header
-  class="w-full flex justify-between md:flex-row-reverse items-center py-4 xl:py-10"
+  class="w-full flex justify-between md:flex-row-reverse items-center py-4 xl:py-10 sticky top-0 px-6 md:px-16 xl:px-42 2xl:px-46 z-50 bg-background/30 backdrop-blur-2xl"
 >
   <!-- Botón y checkbox para barra lateral -->
-  <input type="checkbox" id="sidebar-toggle" class="hidden peer" checked={false} />
+  <input
+    type="checkbox"
+    id="sidebar-toggle"
+    class="hidden peer"
+    checked={false}
+  />
   <script>
     // Asegurarse de que el menú esté cerrado al cargar la página
-    document.addEventListener('DOMContentLoaded', () => {
-      const sidebarToggle = document.getElementById('sidebar-toggle') as HTMLInputElement;
+    document.addEventListener("DOMContentLoaded", () => {
+      const sidebarToggle = document.getElementById(
+        "sidebar-toggle"
+      ) as HTMLInputElement;
       if (sidebarToggle) {
         sidebarToggle.checked = false;
       }
 
       // Cerrar el menú cuando se hace clic en un enlace
-      const navLinks = document.querySelectorAll('nav a');
-      navLinks.forEach(link => {
-        link.addEventListener('click', () => {
+      const navLinks = document.querySelectorAll("nav a");
+      navLinks.forEach((link) => {
+        link.addEventListener("click", () => {
           if (sidebarToggle) {
             sidebarToggle.checked = false;
           }

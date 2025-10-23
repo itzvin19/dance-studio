@@ -2,6 +2,7 @@
 import "../styles/global.css";
 import Footer from "../components/Footer.astro";
 import { ClientRouter } from "astro:transitions";
+import NavBar from "../components/NavBar.astro";
 
 interface Props {
   title: string;
@@ -9,10 +10,10 @@ interface Props {
   keywords?: string;
 }
 
-const { 
-  title = "Dance Studio - Academia de Baile en Lima", 
+const {
+  title = "Dance Studio - Academia de Baile en Lima",
   description = "Aprende a bailar salsa, bachata y timba desde cero. Clases para todos los niveles en Lima.",
-  keywords = "clases de baile, academia de baile, salsa, bachata, timba, Lima, Perú"
+  keywords = "clases de baile, academia de baile, salsa, bachata, timba, Lima, Perú",
 } = Astro.props;
 ---
 
@@ -25,7 +26,7 @@ const {
     <title>{title}</title>
     <meta name="description" content={description} />
     <meta name="keywords" content={keywords} />
-    
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content={Astro.url} />
@@ -42,7 +43,10 @@ const {
   </head>
   <body class="bg-background">
     <ClientRouter />
-    <slot />
+    <NavBar />
+    <main>
+      <slot />
+    </main>
     <footer>
       <Footer />
     </footer>

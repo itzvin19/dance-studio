@@ -18,9 +18,15 @@ import { constants } from "../data/constants";
         loading="lazy"
       />
       <div class="flex gap-2 justify-center text-xl md:hidden">
-        <Icon name="icon-youtube" class="text-white" />
-        <Icon name="icon-instagram" class="text-white" />
-        <Icon name="icon-twitter" class="text-white" />
+        <a href={constants.YOUTUBE_URL}>
+          <Icon name="icon-youtube" class="text-white" />
+        </a>
+        <a href={constants.INSTAGRAM_URL}>
+          <Icon name="icon-instagram" class="text-white" />
+        </a>
+        <a href={constants.X_URL}>
+          <Icon name="icon-twitter" class="text-white" />
+        </a>
       </div>
     </div>
     <div class="w-3/4 md:w-full 2xl:w-1/2 flex justify-between">
@@ -33,17 +39,20 @@ import { constants } from "../data/constants";
           <li>
             <a
               href="/nosotros#historia"
-              class="hover:text-primary transition-colors">Historia</a>
+              class="hover:text-primary transition-colors">Historia</a
+            >
           </li>
           <li>
             <a
               href="/nosotros#valores"
-              class="hover:text-primary transition-colors">Misión y Valores</a>
+              class="hover:text-primary transition-colors">Misión y Valores</a
+            >
           </li>
           <li>
             <a
               href="/nosotros#instructores"
-              class="hover:text-primary transition-colors">Instructores</a>
+              class="hover:text-primary transition-colors">Instructores</a
+            >
           </li>
         </ul>
       </div>
@@ -55,15 +64,18 @@ import { constants } from "../data/constants";
         <ul class="text-white gap-2 xl:gap-4 flex flex-col">
           <li>
             <a href="/estilos" class="hover:text-primary transition-colors"
-              >Salsa</a>
+              >Salsa</a
+            >
           </li>
           <li>
             <a href="/estilos" class="hover:text-primary transition-colors"
-              >Bachata</a>
+              >Bachata</a
+            >
           </li>
           <li>
             <a href="/estilos" class="hover:text-primary transition-colors"
-              >Timba</a>
+              >Timba</a
+            >
           </li>
         </ul>
       </div>
