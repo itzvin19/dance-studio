@@ -8,6 +8,13 @@ const links = [
   { name: "Estilos", href: "/estilos" },
   { name: "Galería", href: "/galeria" },
 ];
+
+// Función para normalizar y comparar rutas
+const isActiveRoute = (linkHref: string, currentPath: string) => {
+  // Normalizar rutas removiendo trailing slashes
+  const normalizeRoute = (route: string) => route === "/" ? "/" : route.replace(/\/$/, "");
+  return normalizeRoute(linkHref) === normalizeRoute(currentPath);
+};
 ---
 
 <header
@@ -60,7 +67,7 @@ const links = [
             <li>
               <a
                 href={link.href}
-                class={`${link.href === pathName ? "text-primary font-medium" : "text-white"}`}
+                class={`${isActiveRoute(link.href, pathName) ? "text-primary font-medium" : "text-white"}`}
               >
                 {link.name}
               </a>
@@ -85,7 +92,7 @@ const links = [
             <a href={link.href} class="text-white">
               {link.name}
             </a>
-            {link.href === pathName ? (
+            {isActiveRoute(link.href, pathName) ? (
               <div
                 transition:name="link-active"
                 class="border-2 border-primary"
